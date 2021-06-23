@@ -1,8 +1,18 @@
 # DWA Planner
 This repository contains the implementation of the Dynamic Window Approach (DWA) local planner.
 
-DWA is a velocity based planner which considers the robot dynamics to find a feasible path. It's core is really simple, calculate a valid a velocity search space and select an optimal velocity based on some calculations, the following image (Provided by [The Dynamic Window Approach to Collision Avoidance](https://www.ri.cmu.edu/pub_files/pub1/fox_dieter_1997_1/fox_dieter_1997_1.pdf)) provide a great overview of its algrotihm:
 
+ <div class='' align='center'>
+    <div class="" style="max-width: 35%;max-height: 35%;display: inline-block;">
+        <img src="https://user-images.githubusercontent.com/49252525/123021565-ef1c5300-d399-11eb-8357-19dc2bc2b7ab.gif">
+    </div>
+    <div class="" style="max-width: 35%;max-height: 35%;display: inline-block;">
+        <img src="https://user-images.githubusercontent.com/49252525/123020780-7963b780-d398-11eb-903c-6517e4269331.gif">
+    </div> 
+</div> 
+
+
+DWA is a velocity based planner which considers the robot dynamics to find a feasible path. It's core is really simple, calculate a valid a velocity search space and select an optimal velocity based on some calculations, the following image (Provided by [The Dynamic Window Approach to Collision Avoidance](https://www.ri.cmu.edu/pub_files/pub1/fox_dieter_1997_1/fox_dieter_1997_1.pdf)) provide a great overview of its algrotihm:
 
 <div align="center"><img src="https://user-images.githubusercontent.com/49252525/122049874-85ec7c80-cda8-11eb-92c7-5c9134a8b5c9.png" width="35%" height="35%"/></div>
 

@@ -21,13 +21,15 @@ class Parameters:
 
         # Dynamic window
         self.dw_time = 3.0
-        self.heading_gain = 0.1
-        self.velocity_gain = 1.1
+        self.heading_gain = 0.2
+        self.velocity_gain = 1.0
         self.distance_gain = 1.7
+        # self.distance_gain = 1.5
+
 
         # Obstacles in the X and Y coordinates
         self.obstacles = np.array([
-            [2.3, 1.5],
+            [1.6, 2.3],
             [3.0, 3.0],
             [2.0, 7.0],
             [3.0, 5.5],
@@ -36,3 +38,15 @@ class Parameters:
             [7.0, 1.5],
             [8.0, 6.0]
         ])
+
+        # Alternative set of obstacles
+        # self.obstacles = np.array([
+        #     [2.3, 1.5],
+        #     [3.0, 3.0],
+        #     [2.0, 7.0],
+        #     [3.0, 5.5],
+        #     [6.0, 4.2],
+        #     [6.0, 8.3],
+        #     [7.0, 1.5],
+        #     [8.0, 6.0]
+        # ])

@@ -1,17 +1,4 @@
 """
-A* is a global planner rather than a local one
-Elastic band planner is a mid level path planner (In terms of deformation)
-Obstacle avoidance planners (Is the very last one before the controllers)
-
-Obstacle avoidance or online planners
-    - Potential field
-    - Dynamic Window Approach: Velocity based planner
-        Cartesian goal coordinates (X, Y) into velocities (V, W) commands for the Robot.
-        Two main goals: Calculate a valid velocity search space and select the OPTIMAL velocity.
-            Search space: Set of velocities which produces a safe trajectory 
-            Optimal velocity: Selected to maximize the Robot clearence and velocity to the closest obstacle  
-    - Sampling Based
-
 DWA follows this algorithm:
     Calculate desired velocity (Transforming goal coordinates into velocities)
     Generate the linear velocity window and store the allowable linear velocities
@@ -254,9 +241,11 @@ class DWA:
                     velocity to force it to turn around the obstacle.
                     """
                     if (abs(optimal_u[0]) < 0.001 and abs(x[3]) < 0.001):
-                        # We aded some angular velocity so the robot turn around the obstacles  
+                        # We added some angular velocity so the robot turn around the obstacles  
                         # and calculates a new linear velocity
                         optimal_u[1] = -40.0 * math.pi / 180.0 
+                        # At this point we can consider the heading angle and add or substract this
+                        # angular velocity
 
         return optimal_u, optimal_traj
 
@@ -307,7 +296,8 @@ if __name__ == "__main__":
     y_dex = 10.0
 
     # Set the initial state: [x, y, yaw, v, w]
-    x = np.array([0.0, 0.0, math.pi / 8.0, 0.0, 0.0])
+    # x = np.array([0.0, 0.0, math.pi / 8.0, 0.0, 0.0])
+    x = np.array([0.0, 0.0, math.pi, 0.0, 0.0])
 
     # Set goal location
     goal = np.array([x_des, y_dex])
@@ -315,37 +305,3 @@ if __name__ == "__main__":
     main(x, goal)
 
 
-"""
-This is an example for the trajectory calculation
-
-
-obs = np.array([
-    [1.5, 1.6],
-    [2.5, 2.6], 
-    [3.1, 3.2], 
-    [3.6, 3.7], 
-    [4.0, 4.1]])
-
-obs_x = obs[:, 0]
-obs_y = obs[:, 1]
-
-traj = np.array([
-    [1., 1.1],
-    [2., 2.1],
-    [3., 3.1],
-    [4., 4.1],
-    [5., 5.1]])
-    
-traj_x = traj[:, 0]
-traj_y = traj[:, 1]
-print(traj_x)
-print(obs_x)
-
-# This is used for casting the obstacle array
-res_x = traj_x - obs_x[:, None]
-# This an element to element operation -> Do not use this one
-# res_x = traj_x - obs_x 
-
-print(res_x)
-    
-"""
