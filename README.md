@@ -3,10 +3,10 @@ This repository contains the implementation of the Dynamic Window Approach (DWA)
 
 
  <div class='' align='center'>
-    <div class="" style="max-width: 35%;max-height: 35%;display: inline-block;">
+    <div class="" style="max-width: 30%;max-height: 30%;display: inline-block;">
         <img src="https://user-images.githubusercontent.com/49252525/123021565-ef1c5300-d399-11eb-8357-19dc2bc2b7ab.gif">
     </div>
-    <div class="" style="max-width: 35%;max-height: 35%;display: inline-block;">
+    <div class="" style="max-width: 30%;max-height: 30%;display: inline-block;">
         <img src="https://user-images.githubusercontent.com/49252525/123020780-7963b780-d398-11eb-903c-6517e4269331.gif">
     </div> 
 </div> 
