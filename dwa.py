@@ -37,7 +37,7 @@ class DWA:
         # Yaw rate update
         x[2] += u[1] * self.config_params.dt
 
-        # X and Y positions update
+        # X, Y positions update
         x[0] += u[0] * math.cos(x[2]) * self.config_params.dt
         x[1] += u[0] * math.sin(x[2]) * self.config_params.dt
         
